@@ -1,0 +1,186 @@
+/* ==========================================================================
+   GLOBAL LAYOUT & SYSTEM STRUCTURE — EDITORIAL NEO-BRUTALIST
+   ========================================================================== */
+
+/* Base Reset & Canvas Setup */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg);
+  background-image: radial-gradient(rgba(23, 23, 23, 0.14) 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 1. Global Container System */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding-x);
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* 2. Global Section Vertical Rhythm */
+.about-section,
+.skills-section,
+.projects-section,
+.journey-section,
+.contact-section {
+  padding: var(--section-spacing-y) 0;
+  position: relative;
+  overflow: visible;
+}
+
+/* 3. Global Section Header System */
+.section-header {
+  position: relative;
+  margin-bottom: clamp(20px, 2.8vw, 32px);
+  width: 100%;
+}
+
+.section-label {
+  font-family: var(--font-headings);
+  font-size: var(--text-section-label);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--color-accent-coral);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.section-title {
+  font-family: var(--font-headings);
+  font-size: var(--text-section-title);
+  font-weight: 900;
+  letter-spacing: -0.035em;
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  line-height: 1.02;
+  margin: 0;
+}
+
+/* 4. Global Section Divider */
+.section-divider {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-ink);
+  margin-top: 14px;
+  overflow: hidden;
+  border: none;
+}
+
+.section-divider-coral {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 100%;
+  background-color: var(--color-accent-coral);
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.revealed .section-divider-coral,
+.reveal-on-scroll.revealed .section-divider-coral,
+.projects-section.revealed .section-divider-coral {
+  width: 140px;
+}
+
+/* 5. Global Button System */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background-color: var(--color-ink);
+  color: var(--color-paper-light);
+  border: 2px solid var(--color-ink);
+  border-radius: 10px;
+  font-family: var(--font-headings);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: var(--shadow-button);
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+  outline: none;
+  user-select: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 2px 2px 0 var(--color-accent-coral);
+  background-color: #242424;
+  color: #FFFFFF;
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+  box-shadow: 0 0 0 var(--color-accent-coral);
+}
+
+.btn-primary .arrow {
+  display: inline-block;
+  transition: transform var(--transition-fast);
+}
+
+.btn-primary:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* 6. Scroll Progress Bar */
+#scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3.5px;
+  background-color: var(--color-accent-coral);
+  z-index: 10010;
+  pointer-events: none;
+}
+
+/* 7. Scroll Reveal Animation Classes */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 8. Global Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .btn-primary,
+  .btn-primary:hover,
+  .btn-primary .arrow {
+    transform: none !important;
+    transition: none !important;
+  }
+}

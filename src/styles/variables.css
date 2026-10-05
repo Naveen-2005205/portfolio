@@ -1,0 +1,106 @@
+/* ==========================================================================
+   GLOBAL DESIGN SYSTEM TOKENS — NEO-BRUTALIST EDITORIAL PORTFOLIO
+   ========================================================================== */
+
+:root {
+  /* 1. Core Color Palette */
+  --color-paper: #F8F5EE;
+  --color-paper-light: #FFFFFF;
+  --color-bg: #F8F5EE;
+  --color-bg-sec: #FFFFFF;
+  --color-surface: #FFFFFF;
+  --color-ink: #171717;
+  --color-text-primary: #171717;
+  --color-text-secondary: #4B5563;
+  --color-accent-coral: #FF5959;
+  --color-accent-yellow: #FFC72C;
+  --color-accent-blue: #4361EE;
+  --color-accent-green: #10B981;
+  --color-white: #FFFFFF;
+
+  /* 2. Global Container & Spacing System */
+  --container-max-width: 1380px;
+  --container-padding-x: clamp(20px, 4vw, 48px);
+  --section-spacing-y: clamp(36px, 4vw, 52px);
+
+  /* Spacing Scale (4, 8, 12, 16, 24, 32, 48, 64, 80, 96, 120) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-30: 120px;
+
+  /* Legacy spacing token aliases */
+  --spacing-xs: 0.4rem;
+  --spacing-sm: 0.8rem;
+  --spacing-md: 1.2rem;
+  --spacing-lg: 2.0rem;
+  --spacing-xl: 3.2rem;
+  --spacing-xxl: 4.8rem;
+
+  /* 3. Typography System */
+  --font-headings: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  --text-section-label: clamp(0.74rem, 0.88vw, 0.82rem);
+  --text-section-title: clamp(2.2rem, 4.4vw, 3.5rem);
+  --text-subsection-title: clamp(1.6rem, 2.8vw, 2.3rem);
+  --text-card-title: clamp(1.05rem, 1.35vw, 1.25rem);
+  --text-body: clamp(0.92rem, 1.05vw, 1.02rem);
+
+  /* 4. Radius System */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-card: 18px;
+  --radius-xl: 24px;
+  --radius-pill: 9999px;
+  --radius-round: 9999px;
+
+  /* 5. Brutalist Borders & Hard Shadows */
+  --border-brutal: 2px solid #171717;
+  --border-subtle: 1px solid #171717;
+  
+  --shadow-card: 5px 6px 0 #171717;
+  --shadow-card-hover: 6px 8px 0 #171717;
+  --shadow-brutal: 5px 6px 0 #171717;
+  --shadow-brutal-sm: 3px 4px 0 #171717;
+  --shadow-brutal-lg: 7px 8px 0 #171717;
+  --shadow-button: 4px 4px 0 var(--color-accent-coral);
+  --shadow-dual-coral: 6px 6px 0 #FF6255, 10px 10px 0 #171717;
+  --shadow-brutalist-accent: 6px 6px 0 #FF6255, 10px 10px 0 #171717;
+
+  /* 6. Transitions */
+  --transition-fast: 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-medium: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Custom Cursor State */
+@media (pointer: fine) {
+  body.custom-cursor-active {
+    cursor: none;
+  }
+  body.custom-cursor-active a,
+  body.custom-cursor-active button,
+  body.custom-cursor-active [role="button"],
+  body.custom-cursor-active input,
+  body.custom-cursor-active textarea {
+    cursor: none;
+  }
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0.01ms linear !important;
+    --transition-medium: 0.01ms linear !important;
+    --transition-slow: 0.01ms linear !important;
+  }
+}
