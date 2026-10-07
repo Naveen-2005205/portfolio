@@ -179,102 +179,105 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* 3D Character Stage & Orb Backdrop */}
-        <div className="neo-character-stage hero-character">
-          <div className="neo-character-halo" aria-hidden="true" />
+        {/* Hero Composition Stage Wrapper (Character + Yellow Circle + Status Cards) */}
+        <div className="neo-hero-stage-wrapper">
+          {/* 3D Character Stage & Orb Backdrop */}
+          <div className="neo-character-stage hero-character">
+            <div className="neo-character-halo" aria-hidden="true" />
 
-          <img
-            className="neo-character"
-            src="assets/hero-character.png"
-            alt="Stylized 3D cartoon developer character with a friendly smile and clear glasses"
-            width="460"
-            height="460"
-            decoding="async"
-            fetchpriority="high"
-            draggable="false"
-          />
-
-          <div className="neo-character-shadow" aria-hidden="true" />
-        </div>
-
-        {/* Yellow Circle at Bottom Right */}
-        <div className="neo-yellow-orb hero-circle" aria-hidden="true" />
-
-        {/* Curved Dashed Arrow from Build Mode to Open To Circle */}
-        <div className="neo-curved-arrow" aria-hidden="true">
-          <svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M 5 62 Q 65 -12, 145 28"
-              stroke="#171717"
-              strokeWidth="2.5"
-              strokeDasharray="6 5"
-              strokeLinecap="round"
-              fill="none"
+            <img
+              className="neo-character"
+              src="assets/hero-character.png"
+              alt="Stylized 3D cartoon developer character with a friendly smile and clear glasses"
+              width="460"
+              height="460"
+              decoding="async"
+              fetchpriority="high"
+              draggable="false"
             />
-            <path
-              d="M 132 16 L 148 29 L 132 38"
-              stroke="#171717"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              fill="none"
-            />
-          </svg>
-        </div>
 
-        {/* Floating / Responsive Status Cards Group */}
-        <div className="neo-cards-group">
-          {/* Card 1: Location (Top Right) */}
-          <div
-            className="neo-status-card neo-card-available available-badge"
-            tabIndex="0"
-            role="region"
-            aria-label="Location"
-          >
-            <span className="neo-status-label coral">LOCATION</span>
-            <strong>
-              <i className="neo-status-dot coral-dot" aria-hidden="true" />
-              PUDUKKOTTAI
-            </strong>
+            <div className="neo-character-shadow" aria-hidden="true" />
           </div>
 
-          {/* Card 2: Current Focus (Middle Right) */}
-          <div
-            className="neo-status-card neo-card-focus focus-badge"
-            tabIndex="0"
-            role="region"
-            aria-label="Current Technical Focus"
-          >
-            <span className="neo-status-label blue">CURRENT FOCUS</span>
-            <strong>Python • Django • React • REST APIs</strong>
+          {/* Yellow Circle at Bottom Right */}
+          <div className="neo-yellow-orb hero-circle" aria-hidden="true" />
+
+          {/* Curved Dashed Arrow from Build Mode to Open To Circle */}
+          <div className="neo-curved-arrow" aria-hidden="true">
+            <svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M 5 62 Q 65 -12, 145 28"
+                stroke="#171717"
+                strokeWidth="2.5"
+                strokeDasharray="6 5"
+                strokeLinecap="round"
+                fill="none"
+              />
+              <path
+                d="M 132 16 L 148 29 L 132 38"
+                stroke="#171717"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                fill="none"
+              />
+            </svg>
           </div>
 
-          {/* Card 3: Build Mode (Bottom Center) */}
-          <div
-            className="neo-status-card neo-card-build build-mode-badge"
-            tabIndex="0"
-            role="region"
-            aria-label="Build Mode Status"
-          >
-            <span className="neo-status-label yellow">BUILD MODE</span>
-            <strong>
-              <i className="neo-status-dot yellow-dot" aria-hidden="true" />
-              ACTIVE
-            </strong>
-          </div>
+          {/* Floating / Responsive Status Cards Group */}
+          <div className="neo-cards-group">
+            {/* Card 1: Location (Top Right) */}
+            <div
+              className="neo-status-card neo-card-available available-badge"
+              tabIndex="0"
+              role="region"
+              aria-label="Location"
+            >
+              <span className="neo-status-label coral">LOCATION</span>
+              <strong>
+                <i className="neo-status-dot coral-dot" aria-hidden="true" />
+                PUDUKKOTTAI
+              </strong>
+            </div>
 
-          {/* Card 4: Open To (Bottom Right on Yellow Circle) */}
-          <div
-            className="neo-status-card neo-card-open open-to-badge"
-            tabIndex="0"
-            role="region"
-            aria-label="Open Opportunities Status"
-          >
-            <span className="neo-status-label green">OPEN TO</span>
-            <strong>
-              <i className="neo-status-dot green-dot" aria-hidden="true" />
-              NEW OPPORTUNITIES
-            </strong>
+            {/* Card 2: Current Focus (Middle Right) */}
+            <div
+              className="neo-status-card neo-card-focus focus-badge"
+              tabIndex="0"
+              role="region"
+              aria-label="Current Technical Focus"
+            >
+              <span className="neo-status-label blue">CURRENT FOCUS</span>
+              <strong>Python • Django • React • REST APIs</strong>
+            </div>
+
+            {/* Card 3: Build Mode (Bottom Center) */}
+            <div
+              className="neo-status-card neo-card-build build-mode-badge"
+              tabIndex="0"
+              role="region"
+              aria-label="Build Mode Status"
+            >
+              <span className="neo-status-label yellow">BUILD MODE</span>
+              <strong>
+                <i className="neo-status-dot yellow-dot" aria-hidden="true" />
+                ACTIVE
+              </strong>
+            </div>
+
+            {/* Card 4: Open To (Bottom Right on Yellow Circle) */}
+            <div
+              className="neo-status-card neo-card-open open-to-badge"
+              tabIndex="0"
+              role="region"
+              aria-label="Open Opportunities Status"
+            >
+              <span className="neo-status-label green">OPEN TO</span>
+              <strong>
+                <i className="neo-status-dot green-dot" aria-hidden="true" />
+                NEW OPPORTUNITIES
+              </strong>
+            </div>
           </div>
         </div>
       </div>
