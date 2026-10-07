@@ -3843,26 +3843,36 @@ button {
   }
 
   .contact-card-stage-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    position: relative;
     max-width: 100%;
+    margin: 0 auto;
   }
 
   .contact-character-wrap {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    margin: 20px auto 0 auto;
-    width: 200px;
-    transform: none !important;
-    opacity: 1 !important;
+    position: absolute;
+    right: -10px;
+    bottom: -22px;
+    width: clamp(125px, 28vw, 160px);
+    z-index: 10;
+    pointer-events: none;
+    margin: 0;
     display: block;
+    transform-origin: bottom right;
+  }
+
+  .contact-character-wrap.revealed {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 
   .contact-speech-bubble {
     top: -20px;
-    left: 50%;
+    left: 45%;
+    padding: 5px 12px;
+  }
+
+  .speech-text {
+    font-size: 0.65rem;
   }
 
   .contact-info-strip {
@@ -3884,8 +3894,25 @@ button {
 }
 
 @media (max-width: 480px) {
+  .contact-interactive-card {
+    padding: 28px 16px;
+    border-radius: 18px;
+  }
+
   .contact-character-wrap {
-    width: 160px;
+    right: -6px;
+    bottom: -16px;
+    width: clamp(110px, 30vw, 135px);
+  }
+
+  .contact-speech-bubble {
+    top: -18px;
+    left: 42%;
+    padding: 4px 9px;
+  }
+
+  .speech-text {
+    font-size: 0.58rem;
   }
 }
 
