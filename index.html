@@ -1,3 +1,11 @@
+Merge branch 'main' of https://github.com/Naveen-2005205/portfolio
+# Please enter a commit message to explain why this merge is necessary,
+# especially if it merges an updated upstream into a topic branch.
+#
+# Lines starting with '#' will be ignored, and an empty message aborts
+# the commit.
+~ ~ ~ ~ ~ ~ ~ ~ .git/MERGE_MSG [unix] (12:28 07/10/2026) 6,1 All
+"~/Desktop/portfolio/.git/MERGE_MSG" [unix] 6L, 293B
 <!DOCTYPE html>
 <html lang="en">
 
@@ -71,7 +79,7 @@
 
   <!-- UMD Libraries Failure Failsafe Check -->
   <script>
-    window.addEventListener('load', function() {
+    window.addEventListener('load', function () {
       if (typeof React === 'undefined' || typeof ReactDOM === 'undefined') {
         var preloader = document.getElementById('preloader-screen');
         if (preloader) {
@@ -89,16 +97,23 @@
 <body>
 
   <!-- Local Dev Error HUD Overlay -->
-  <div id="error-hud" style="display:none; position:fixed; top:0; left:0; width:100%; padding:20px; background:#D32F2F; color:white; font-family:monospace; font-size:13px; z-index:999999; box-shadow:0 4px 20px rgba(0,0,0,0.5); box-sizing:border-box;">
-    <div style="font-weight:900; font-size:15px; margin-bottom:8px;">⚠️ BROWSER COMPILATION / RUNTIME EXCEPTION DETECTED:</div>
-    <pre id="error-hud-text" style="margin:0; padding:10px; background:rgba(0,0,0,0.3); border-radius:4px; overflow-x:auto; white-space:pre-wrap; max-height:200px;"></pre>
+  <div id="error-hud"
+    style="display:none; position:fixed; top:0; left:0; width:100%; padding:20px; background:#D32F2F; color:white; font-family:monospace; font-size:13px; z-index:999999; box-shadow:0 4px 20px rgba(0,0,0,0.5); box-sizing:border-box;">
+    <div style="font-weight:900; font-size:15px; margin-bottom:8px;">⚠️ BROWSER COMPILATION / RUNTIME EXCEPTION
+      DETECTED:</div>
+    <pre id="error-hud-text"
+      style="margin:0; padding:10px; background:rgba(0,0,0,0.3); border-radius:4px; overflow-x:auto; white-space:pre-wrap; max-height:200px;"></pre>
     <div style="margin-top:10px; display:flex; gap:10px;">
-      <button onclick="window.location.reload(true)" style="padding:6px 12px; background:#FFFFFF; color:#D32F2F; border:none; font-weight:800; border-radius:4px; cursor:pointer;">Force Hard Reload</button>
-      <button onclick="document.getElementById('error-hud').style.display='none'" style="padding:6px 12px; background:rgba(255,255,255,0.2); color:#FFFFFF; border:1px solid #FFFFFF; font-weight:700; border-radius:4px; cursor:pointer;">Dismiss Overlay</button>
+      <button onclick="window.location.reload(true)"
+        style="padding:6px 12px; background:#FFFFFF; color:#D32F2F; border:none; font-weight:800; border-radius:4px; cursor:pointer;">Force
+        Hard Reload</button>
+      <button onclick="document.getElementById('error-hud').style.display='none'"
+        style="padding:6px 12px; background:rgba(255,255,255,0.2); color:#FFFFFF; border:1px solid #FFFFFF; font-weight:700; border-radius:4px; cursor:pointer;">Dismiss
+        Overlay</button>
     </div>
   </div>
   <script>
-    (function() {
+    (function () {
       var errors = [];
       function showHUD(msg) {
         errors.push(msg);
@@ -109,10 +124,10 @@
           txt.textContent = errors.join('\n\n');
         }
       }
-      window.addEventListener('error', function(e) {
+      window.addEventListener('error', function (e) {
         showHUD(e.message + '\n  at ' + (e.filename || 'unknown') + ':' + (e.lineno || 0) + ':' + (e.colno || 0));
       });
-      window.addEventListener('unhandledrejection', function(e) {
+      window.addEventListener('unhandledrejection', function (e) {
         showHUD('Unhandled Promise Rejection: ' + e.reason);
       });
     })();
@@ -120,15 +135,16 @@
 
   <!-- Mounting target for React App -->
   <div id="root">
-    
+
     <!-- Preloader Screen (visible during compilation) -->
-    <div 
-      id="preloader-screen" 
-      style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background-color: #F7F1E7; display: flex; flex-direction: column; justify-content: center; align-items: center; font-family: sans-serif; z-index: 1500;"
-    >
+    <div id="preloader-screen"
+      style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background-color: #F7F1E7; display: flex; flex-direction: column; justify-content: center; align-items: center; font-family: sans-serif; z-index: 1500;">
       <div style="display: flex; flex-direction: column; alignItems: center; gap: 16px; text-align: center;">
-        <div style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid rgba(23,23,23,0.05); border-top-color: #FF6B5A; animation: spin 0.8s linear infinite; margin: 0 auto 12px;"></div>
-        <span style="font-size: 0.62rem; font-weight: 800; letter-spacing: 0.12em; color: #171717; text-transform: uppercase;">
+        <div
+          style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid rgba(23,23,23,0.05); border-top-color: #FF6B5A; animation: spin 0.8s linear infinite; margin: 0 auto 12px;">
+        </div>
+        <span
+          style="font-size: 0.62rem; font-weight: 800; letter-spacing: 0.12em; color: #171717; text-transform: uppercase;">
           LOADING SYSTEM...
         </span>
       </div>
@@ -137,20 +153,16 @@
   </div>
 
   <!-- CDN Failure Fallback Screen -->
-  <div 
-    id="cdn-error-screen" 
-    style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background-color: #F7F1E7; color: #171717; display: none; flex-direction: column; justify-content: center; align-items: center; font-family: sans-serif; z-index: 9999; text-align: center; padding: 20px;"
-  >
+  <div id="cdn-error-screen"
+    style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background-color: #F7F1E7; color: #171717; display: none; flex-direction: column; justify-content: center; align-items: center; font-family: sans-serif; z-index: 9999; text-align: center; padding: 20px;">
     <h2 style="color: #FF6B5A; font-size: 1.8rem; margin-bottom: 12px; font-weight: 800;">Initialization Error</h2>
     <p style="color: #555555; max-width: 400px; line-height: 1.6; margin-bottom: 24px; font-size: 0.95rem;">
-      Unable to load the interactive portfolio. Required CDN libraries failed to load. Please check your network connection and refresh the page.
+      Unable to load the interactive portfolio. Required CDN libraries failed to load. Please check your network
+      connection and refresh the page.
     </p>
-    <button 
-      onclick="window.location.reload()" 
+    <button onclick="window.location.reload()"
       style="background-color: #171717; color: #FFFFFF; border: 2px solid #171717; padding: 12px 28px; font-weight: 800; border-radius: 6px; cursor: pointer; transition: opacity 0.2s;"
-      onmouseover="this.style.opacity='0.9'"
-      onmouseout="this.style.opacity='1'"
-    >
+      onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
       Refresh Page
     </button>
   </div>
@@ -158,13 +170,18 @@
   <!-- Spin animation style for preloader -->
   <style>
     @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
     }
   </style>
 
   <!-- Load Babel JSX Modular Codebases in Order -->
-  
+
   <!-- 1. Utilities -->
   <script type="text/babel" src="src/utils.jsx?v=5.0"></script>
 
@@ -192,7 +209,7 @@
   <script type="text/babel" src="src/components/Contact.jsx?v=32.0"></script>
   <script type="text/babel" src="src/components/CustomCursor.jsx?v=31.0"></script>
   <script type="text/babel" src="src/components/Footer.jsx?v=31.0"></script>
- 
+
   <!-- 4. Main App Controller & Mounting -->
   <script type="text/babel" src="src/App.jsx?v=48.0"></script>
   <script type="text/babel" src="src/index.jsx?v=30.0"></script>
