@@ -2770,8 +2770,9 @@ button {
   .neo-hero {
     min-height: auto;
     height: auto;
-    padding: 95px 0 45px;
+    padding: 85px 0 45px;
     display: block;
+    overflow-x: hidden;
   }
 
   .neo-hero-grid {
@@ -2784,15 +2785,18 @@ button {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 20px;
+    gap: 0;
     padding: 0 16px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
   }
 
   .neo-nav-logo {
     top: 12px;
     left: 14px;
-    width: 62px;
-    height: 50px;
+    width: 60px;
+    height: 48px;
     border-radius: 12px;
     box-shadow: 4px 5px 0 #171717;
     font-size: 1.15rem;
@@ -2803,7 +2807,7 @@ button {
     left: 84px;
     right: 14px;
     width: auto;
-    min-height: 50px;
+    min-height: 48px;
     transform: none;
     padding: 5px 7px;
     box-shadow: 4px 5px 0 #171717;
@@ -2825,91 +2829,147 @@ button {
     font-size: 10px;
   }
 
+  /* 1. Heading */
   .neo-hero-heading {
     position: relative;
     top: auto;
     left: auto;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     text-align: center;
-    margin: 12px 0 0;
+    margin: 8px 0 12px 0;
+    width: 100%;
   }
 
   .neo-title-top {
-    font-size: clamp(2rem, 7.5vw, 2.8rem);
-    margin-bottom: 4px;
+    font-size: clamp(1.9rem, 7.5vw, 2.6rem);
+    margin-bottom: 2px;
+    letter-spacing: -0.02em;
   }
 
   .neo-title-name {
-    font-size: clamp(3.4rem, 13vw, 5.2rem);
+    font-size: clamp(3.4rem, 13.5vw, 5.0rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
   }
 
+  /* 2. Description & CTA Buttons */
   .neo-hero-copy {
     position: relative;
     left: auto;
     top: auto;
     width: 100%;
-    max-width: 520px;
+    max-width: 480px;
     text-align: center;
-    margin: 0;
+    margin: 0 auto 14px;
   }
 
   .neo-description {
     text-align: center;
     max-width: 100%;
-    margin-bottom: 18px;
-    font-size: 0.98rem;
+    margin: 0 0 16px;
+    font-size: clamp(0.92rem, 3.8vw, 1.02rem);
+    line-height: 1.5;
+    color: #4B5563;
   }
 
   .neo-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
     justify-content: center;
     gap: 10px;
     width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
   }
 
   .neo-btn {
+    width: 100%;
     min-height: 48px;
-    padding: 11px 18px;
-    font-size: .78rem;
+    padding: 12px 20px;
+    font-size: 0.8rem;
     box-shadow: 4px 5px 0 #171717;
   }
 
+  /* 3. Large Hero Character Centered Below Buttons */
   .neo-character-stage {
     position: relative;
     left: auto;
     top: auto;
-    margin: 12px auto 6px;
-    width: min(78vw, 290px);
+    margin: 16px auto 0;
+    width: clamp(290px, 82vw, 370px);
+    max-width: 100%;
     transform: none !important;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .neo-character {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 3;
+    display: block;
+    object-fit: contain;
+    filter: drop-shadow(0 18px 24px rgba(23, 23, 23, 0.12));
+    animation: neo-character-float 5.5s ease-in-out infinite;
   }
 
   .neo-character-shadow {
-    bottom: -22px;
-    width: 60%;
-    height: 15px;
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65%;
+    height: 16px;
     filter: blur(8px);
+    z-index: 1;
   }
 
+  .neo-character-halo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 86%;
+    height: 86%;
+    z-index: 2;
+  }
+
+  /* 4. Yellow Circle Behind Character */
   .neo-yellow-orb {
     display: block;
-    position: absolute;
-    right: 50%;
-    bottom: -10px;
-    transform: translateX(50%) !important;
-    width: min(65vw, 240px);
+    position: relative;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    transform: none !important;
+    width: clamp(240px, 68vw, 310px);
     aspect-ratio: 1 / 1;
+    height: auto;
+    border: 2.5px solid #171717;
+    border-radius: 50%;
+    background: var(--color-accent-yellow);
+    box-sizing: border-box;
+    margin: calc(-1 * clamp(255px, 70vw, 320px) + 20px) auto 18px;
     z-index: 1;
     opacity: 0.95;
+    pointer-events: none;
     animation: none;
   }
 
-  /* Responsive Clean Cards Group on Mobile */
+  /* 5. Clean Vertical Status Cards Group Below Character */
   .neo-cards-group {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     width: 100%;
-    max-width: 560px;
-    margin: 12px auto 0;
+    max-width: 360px;
+    margin: 8px auto 0;
     position: relative;
     z-index: 6;
   }
@@ -2924,9 +2984,15 @@ button {
     width: 100%;
     min-width: 0 !important;
     margin: 0;
-    padding: 11px 14px;
-    border-radius: 10px;
-    box-shadow: 3px 4px 0 #171717;
+    box-sizing: border-box;
+    padding: 12px 16px;
+    background: #FFFFFF;
+    border: 2.5px solid #171717;
+    border-radius: 12px;
+    box-shadow: 4px 5px 0 #171717;
+    color: #171717;
+    opacity: 1 !important;
+    text-align: left;
     white-space: normal;
     word-break: break-word;
     animation: none !important;
@@ -2934,18 +3000,26 @@ button {
 
   .neo-status-card:hover,
   .neo-status-card:focus-visible {
-    transform: translateY(-3px) scale(1.02) !important;
+    transform: translateY(-2px) !important;
     box-shadow: 4px 6px 0 #171717;
   }
 
   .neo-status-card strong {
-    font-size: .75rem;
-    flex-wrap: wrap;
+    font-size: 0.78rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
     gap: 6px;
+    flex-wrap: wrap;
+    line-height: 1.3;
   }
 
   .neo-status-label {
-    font-size: .62rem;
+    font-size: 0.62rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+    display: block;
   }
 
   .neo-curved-arrow {
@@ -2960,12 +3034,19 @@ button {
 /* NARROW PHONES (<= 480px down to 320px) */
 @media (max-width: 480px) {
   .neo-hero {
-    padding-top: 85px;
+    padding-top: 80px;
     padding-bottom: 35px;
   }
 
   .neo-navbar {
     left: 80px;
+    right: 12px;
+    top: 10px;
+  }
+
+  .neo-nav-logo {
+    top: 10px;
+    left: 12px;
   }
 
   .neo-nav-link {
@@ -2974,46 +3055,34 @@ button {
   }
 
   .neo-title-top {
-    font-size: clamp(1.8rem, 8vw, 2.2rem);
+    font-size: clamp(1.8rem, 8vw, 2.3rem);
   }
 
   .neo-title-name {
     font-size: clamp(3.0rem, 13.5vw, 4.4rem);
   }
 
-  .neo-actions {
-    flex-direction: column;
-    align-items: stretch;
-    max-width: 320px;
-    margin: 0 auto;
-  }
-
-  .neo-btn {
-    width: 100%;
-  }
-
   .neo-character-stage {
-    width: min(76vw, 260px);
-    margin: 8px auto 4px;
+    width: min(84vw, 340px);
+    margin: 14px auto 0;
   }
 
   .neo-yellow-orb {
-    width: min(64vw, 210px);
-    bottom: -6px;
+    width: min(70vw, 280px);
+    margin: calc(-1 * min(72vw, 290px) + 20px) auto 14px;
   }
 
   .neo-cards-group {
-    grid-template-columns: 1fr;
-    max-width: 330px;
+    max-width: 340px;
     gap: 9px;
   }
 
   .neo-status-card {
-    padding: 10px 13px;
+    padding: 10px 14px;
   }
 
   .neo-status-card strong {
-    font-size: .72rem;
+    font-size: 0.74rem;
   }
 }
 
