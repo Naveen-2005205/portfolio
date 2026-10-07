@@ -2898,8 +2898,8 @@ button {
     position: relative;
     left: auto;
     top: auto;
-    margin: 16px auto 0;
-    width: clamp(290px, 82vw, 370px);
+    margin: 28px auto 0;
+    width: clamp(280px, 78vw, 340px);
     max-width: 100%;
     transform: none !important;
     z-index: 4;
@@ -2948,14 +2948,14 @@ button {
     bottom: auto;
     left: auto;
     transform: none !important;
-    width: clamp(285px, 80vw, 350px);
+    width: clamp(250px, 70vw, 300px);
     aspect-ratio: 1 / 1;
     height: auto;
     border: 2.5px solid #171717;
     border-radius: 50%;
     background: var(--color-accent-yellow);
     box-sizing: border-box;
-    margin: calc(-1 * clamp(285px, 80vw, 350px) - 6px) auto 18px;
+    margin: calc(-1 * clamp(250px, 70vw, 300px) + 20px) auto 20px;
     z-index: 1;
     opacity: 0.95;
     pointer-events: none;
@@ -3024,7 +3024,7 @@ button {
 
   /* Upper-Right: Location */
   .neo-card-available {
-    top: calc(-1 * clamp(285px, 80vw, 360px) + 20px) !important;
+    top: calc(-1 * clamp(270px, 76vw, 330px) + 10px) !important;
     right: 2px !important;
     bottom: auto !important;
     left: auto !important;
@@ -3034,7 +3034,7 @@ button {
 
   /* Upper-Left: Current Focus */
   .neo-card-focus {
-    top: calc(-1 * clamp(285px, 80vw, 360px) + 60px) !important;
+    top: calc(-1 * clamp(270px, 76vw, 330px) + 55px) !important;
     left: 2px !important;
     right: auto !important;
     bottom: auto !important;
@@ -3044,7 +3044,7 @@ button {
 
   /* Lower-Left: Build Mode */
   .neo-card-build {
-    top: -45px !important;
+    top: -35px !important;
     left: 4px !important;
     right: auto !important;
     bottom: auto !important;
@@ -3054,7 +3054,7 @@ button {
 
   /* Lower-Right: Open To */
   .neo-card-open {
-    top: -40px !important;
+    top: -30px !important;
     right: 4px !important;
     left: auto !important;
     bottom: auto !important;
@@ -3103,13 +3103,13 @@ button {
   }
 
   .neo-character-stage {
-    width: min(84vw, 340px);
-    margin: 14px auto 0;
+    width: min(80vw, 320px);
+    margin: 24px auto 0;
   }
 
   .neo-yellow-orb {
-    width: min(84vw, 340px);
-    margin: calc(-1 * min(84vw, 340px) - 6px) auto 18px;
+    width: min(72vw, 280px);
+    margin: calc(-1 * min(72vw, 280px) + 16px) auto 18px;
   }
 
   .neo-status-card {
@@ -3125,25 +3125,25 @@ button {
   }
 
   .neo-card-available {
-    top: calc(-1 * min(84vw, 340px) + 15px) !important;
+    top: calc(-1 * min(80vw, 320px) + 10px) !important;
     right: 0px !important;
     max-width: 135px;
   }
 
   .neo-card-focus {
-    top: calc(-1 * min(84vw, 340px) + 55px) !important;
+    top: calc(-1 * min(80vw, 320px) + 50px) !important;
     left: 0px !important;
     max-width: 148px;
   }
 
   .neo-card-build {
-    top: -42px !important;
+    top: -32px !important;
     left: 2px !important;
     max-width: 122px;
   }
 
   .neo-card-open {
-    top: -38px !important;
+    top: -28px !important;
     right: 2px !important;
     max-width: 152px;
   }
