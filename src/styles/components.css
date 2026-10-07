@@ -2837,43 +2837,53 @@ button {
     font-size: 10px;
   }
 
-  /* 1. Heading (Order 1 at top) */
+  /* 1. Heading (Order 1: Top text with large NAVEEN behind character) */
   .neo-hero-heading {
     order: 1 !important;
     position: relative !important;
+    z-index: 1 !important;
     top: auto !important;
     left: auto !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     text-align: center !important;
-    margin: 8px 0 10px 0 !important;
+    margin: 8px 0 0 0 !important;
     width: 100% !important;
+    user-select: none !important;
   }
 
   .neo-title-top {
-    font-size: clamp(1.9rem, 7.5vw, 2.6rem);
+    font-size: clamp(1.6rem, 6.2vw, 2.2rem);
     margin-bottom: 2px;
     letter-spacing: -0.02em;
+    color: #171717;
+    position: relative;
+    z-index: 1;
   }
 
   .neo-title-name {
-    font-size: clamp(3.4rem, 13.5vw, 5.0rem);
-    line-height: 0.95;
-    letter-spacing: -0.04em;
+    font-size: clamp(4.6rem, 18.5vw, 6.8rem);
+    line-height: 0.82;
+    letter-spacing: -0.055em;
+    color: var(--color-accent-coral);
+    display: block;
+    text-align: center;
+    position: relative;
+    z-index: 1;
   }
 
-  /* 2. Hero Composition Stage (Order 2: Character + Yellow Circle + Floating Cards) */
+  /* 2. Hero Composition Stage (Order 2: Character in front of NAVEEN + Yellow Circle + Floating Cards) */
   .neo-hero-stage-wrapper {
     order: 2 !important;
     display: block !important;
     position: relative !important;
     width: 100% !important;
     max-width: 420px !important;
-    margin: 10px auto 0 !important;
-    padding-bottom: 50px !important;
+    margin: -36px auto 0 !important;
+    padding-bottom: 48px !important;
     box-sizing: border-box !important;
-    z-index: 5 !important;
+    z-index: 3 !important;
   }
 
   /* 3. Description & CTA Buttons (Order 3: Placed directly above About Me) */
@@ -3119,15 +3129,15 @@ button {
   }
 
   .neo-title-top {
-    font-size: clamp(1.8rem, 8vw, 2.3rem);
+    font-size: clamp(1.45rem, 6.2vw, 1.9rem);
   }
 
   .neo-title-name {
-    font-size: clamp(3.0rem, 13.5vw, 4.4rem);
+    font-size: clamp(4.2rem, 18vw, 5.6rem);
   }
 
   .neo-hero-stage-wrapper {
-    margin: 16px auto 0 !important;
+    margin: -30px auto 0 !important;
     padding-bottom: 44px !important;
   }
 
